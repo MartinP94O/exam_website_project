@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- create profile form -->
+    <section id="register-page" class="content auth">
+        <form id="login" method="post" action="{% url 'login profile' %}">
+            <div class="container">
+                <div class="brand-logo"></div>
+                <h1>Log in</h1>
+
+                {{ form }}
+
+                <input type="hidden" name="next" value="{{ next }}">
+                <button class="btn submit" type="submit">Log in</button>
+                {% csrf_token %}
+            </div>
+            <div class="container">
+                <p>You are new?<a href="{% url 'create profile' %}">Register</a></p>
+            </div>
+        </form>
+    </section>
+
+{% endblock %}

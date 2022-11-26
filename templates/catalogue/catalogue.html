@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    {% if not products %}
+        <p class="no-articles">No products yet</p>
+
+    {% else %}
+        <section id="catalogue">
+        <h1>Total products {{ products_count }}</h1>
+        {% for product in products %}
+
+            <div class="car-card">
+                <div class="image-wrap">
+                    <img src="{{ product.product_image }}"
+                         alt="{{ product.product_type }}">
+                </div>
+                <h3>{{ product.product_type }}</h3>
+
+                <h1>{{ product.product_model }}</h1>
+
+                <h2>{{ product.product_price|floatformat:2 }} $</h2>
+                <div class="details-buttons">
+                    <a href="{% url 'product details' pk=product.pk %}" class="details-btn">Details</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+</section>
+
+{% endblock %}

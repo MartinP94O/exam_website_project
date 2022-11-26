@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- details section -->
+    <section id="car-details">
+        <h1>{{ product.product_type }} Details</h1>
+        <div class="info-section">
+            <div class="car-header">
+                <!-- car image -->
+                <img class="car-img"
+                     src="{{ product.product_image }}"
+                     alt='{{ product.product_model }}'/>
+                <!-- type and model -->
+                <h1>{{ product.product_type }}</h1>
+                <!-- car model -->
+                <p><span class="description">Model: {{ product.product_model }}</span></p>
+                <!-- car year -->
+                <p><span class="description">Year: {{ product.product_year }}</span></p>
+                <!-- car price -->
+                <p><span class="description">Price: {{ product.product_price|floatformat:2 }}</span></p>
+            </div>
+
+
+            {% if request.user.is_staff %}
+            <div class="buttons">
+                <a href="{% url 'product edit' pk=product.pk %}" class="edit-button">Edit</a>
+                <a href="{% url 'product delete' pk=product.pk %}" class="delete-button">Delete</a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+{% endblock %}
