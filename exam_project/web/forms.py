@@ -1,5 +1,6 @@
 from django import forms
 
+from exam_project.accounts.models import BuyingAddress
 from exam_project.web.models import Product
 
 
@@ -75,4 +76,11 @@ class ProductDeleteForm(forms.ModelForm):
         model = Product
         fields = '__all__'
         disabled = True
+
+
+class ProductBuyForm(forms.ModelForm):
+
+    class Meta:
+        model = BuyingAddress
+        fields = '__all__'
 

@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 
-from exam_project.web.forms import ProductCreateForm, ProductEditForm, ProductDeleteForm
+from exam_project.web.forms import ProductCreateForm, ProductEditForm, ProductDeleteForm, ProductBuyForm
 from exam_project.web.models import Product
 
 UserModel = get_user_model()
@@ -82,6 +82,7 @@ def product_edit(request, pk):
 
 
 def product_delete(request, pk):
+
     profile = UserModel
     product = Product.objects.get(pk=pk)
     if request.method == 'POST':
@@ -120,6 +121,25 @@ def profile_details(request):
         'products_price': products_price,
     }
     return render(request, 'profile/profile-details.html', context)
+
+
+def product_buy(request, pk):
+
+    profile = UserModel
+    product = Product.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = ProductBuyForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('catalogue')
+    else:
+        form = ProductBuyForm(instance=product)
+    context = {
+        'form': form,
+        'product': product,
+        'profile': profile,
+    }
+    return render(request, 'product/product-buy.html', context)
 
 
 # def profile_edit(request, pk):

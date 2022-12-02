@@ -22,12 +22,16 @@
 
 
             {% if request.user.is_staff %}
-            <div class="buttons">
+                <div class="buttons">
                 <a href="{% url 'product edit' pk=product.pk %}" class="edit-button">Edit</a>
                 <a href="{% url 'product delete' pk=product.pk %}" class="delete-button">Delete</a>
-            </div>
+                </div>
+            {% else %}
+                <div class="buttons">
+                    <a href="{% url 'product buy' pk=product.pk %}" class="edit-button">Buy</a>
+                </div>
             {% endif %}
-        </div>
+            </div>
     </section>
 
 {% endblock %}
