@@ -131,6 +131,7 @@ def product_buy(request, pk):
         form = ProductBuyForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
+            product.delete()
             return redirect('catalogue')
     else:
         form = ProductBuyForm(instance=product)
