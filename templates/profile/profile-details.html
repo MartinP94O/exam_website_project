@@ -18,7 +18,6 @@
                 {% if object.first_name and object.last_name %}
                     <p class="description">Name: {{ object.first_name }} {{ object.last_name }}</p>
                 {% endif %}
-                <p class="description">Total price: {{ products_price|floatformat:2 }}</p>
                 <div class="buttons">
                     {% if is_owner %}
                         <a href="{% url 'profile edit' pk=object.pk %}" class="edit-button">Edit</a>
