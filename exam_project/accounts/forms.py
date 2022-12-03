@@ -5,26 +5,23 @@ UserModel = get_user_model()
 
 
 class UserEditForm(auth_forms.UserChangeForm):
-
     class Meta:
         model = UserModel
         fields = '__all__'
         field_classes = {'username': auth_forms.UsernameField}
-        #TODO add placeholders
 
 
 class UserCreateForm(auth_forms.UserCreationForm):
-    # TODO add placeholders
-    # placeholders = {
-    #     'username': 'Username',
-    #     'email': 'Email',
-    #     'password1': 'Password',
-    #     'password2': 'Confirm password',
-    # }
-
     class Meta:
         model = UserModel
         fields = ('username', 'email')
         field_classes = {
             'username': UsernameField,
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({'placeholder': 'Username'})
+        self.fields['email'].widget.attrs.update({'placeholder': 'Email'})
+        self.fields['password1'].widget.attrs.update({'placeholder': 'Password'})
+        self.fields['password2'].widget.attrs.update({'placeholder': 'Repeat password'})
