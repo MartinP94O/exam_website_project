@@ -97,7 +97,7 @@ a {
     text-align: center;
     letter-spacing: initial;
     word-spacing: initial;
-    text-transform: lowercase;
+    text-transform: uppercase;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     font-family: 'Droid Sans Mono Dotted', fantasy ;
     position: absolute;
