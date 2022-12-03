@@ -70,7 +70,7 @@ def product_edit(request, pk):
         form = ProductEditForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
-            return redirect('catalogue')
+            return redirect('product details', pk)
     else:
         form = ProductEditForm(instance=product)
     context = {
