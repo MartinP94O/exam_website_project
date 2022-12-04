@@ -4,5 +4,5 @@ from exam_project.web.models import Product
 
 
 @admin.register(Product)
-class PetAdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     pass

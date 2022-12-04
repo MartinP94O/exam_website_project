@@ -4,67 +4,31 @@ from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
 
 
-# class Profile(models.Model):
-#     username = models.CharField(
-#         null=False,
-#         blank=False,
-#         max_length=10,
-#         validators=(
-#             MinLengthValidator(2, 'The username must be a minimum of 2 chars'),
-#         ),
-#     )
-#
-#     email = models.EmailField(
-#         null=False,
-#         blank=False,
-#     )
-#
-#     age = models.IntegerField(
-#         null=False,
-#         blank=False,
-#         validators=(
-#             MinValueValidator(18),
-#         ),
-#     )
-#
-#     password = models.CharField(
-#         max_length=30,
-#     )
-#
-#     first_name = models.CharField(
-#         null=True,
-#         blank=True,
-#         max_length=30,
-#     )
-#
-#     last_name = models.CharField(
-#         null=True,
-#         blank=True,
-#         max_length=30,
-#     )
-#
-#     profile_picture = models.URLField(
-#         null=True,
-#         blank=True,
-#     )
-
-UserModel = get_user_model()
-
-
 class Product(models.Model):
+    MAX_LEN_PRODUCT_TYPE = 30
+    MIN_LEN_PRODUCT_TYPE = 2
+
+    MAX_LEN_PRODUCT_MODEL = 30
+    MIN_LEN_PRODUCT_MODEL = 2
+
+    MIN_PRICE = 0.01
+
     product_type = models.CharField(
         null=False,
         blank=False,
-        max_length=30,
+        max_length=MAX_LEN_PRODUCT_TYPE,
+        validators=(
+            MinLengthValidator(MIN_LEN_PRODUCT_TYPE),
+        ),
 
     )
 
     product_model = models.CharField(
         null=False,
         blank=False,
-        max_length=20,
+        max_length=MAX_LEN_PRODUCT_MODEL,
         validators=(
-            MinLengthValidator(2),
+            MinLengthValidator(MIN_LEN_PRODUCT_MODEL),
         ),
     )
 
@@ -82,11 +46,8 @@ class Product(models.Model):
         null=False,
         blank=False,
         validators=(
-            MinValueValidator(1),
+            MinValueValidator(MIN_PRICE),
         ),
     )
 
-    # user = models.ForeignKey(
-    #     UserModel,
-    #     on_delete=models.RESTRICT,
-    # )
+

@@ -24,7 +24,7 @@
                     <a href="{% url 'create product' %}">Create product</a>
                 {% endif %}
                 <a href="{% url 'profile details' pk=request.user.pk %}">Profile</a>
-                <a href="{% url 'logout profile' %}">Logout</a>
+                <a href="{% url 'logout profile' %}">Log out</a>
             {% else %}
                 <a href="{% url 'catalogue' %}">Catalogue</a>
                 <a href="{% url 'create profile' %}">Create Profile</a>

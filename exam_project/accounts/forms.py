@@ -1,5 +1,6 @@
 from django.contrib.auth import forms as auth_forms, get_user_model
 from django.contrib.auth.forms import UsernameField, UserChangeForm
+from django.core.exceptions import ValidationError
 
 UserModel = get_user_model()
 
@@ -25,3 +26,4 @@ class UserCreateForm(auth_forms.UserCreationForm):
         self.fields['email'].widget.attrs.update({'placeholder': 'Email'})
         self.fields['password1'].widget.attrs.update({'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update({'placeholder': 'Repeat password'})
+
