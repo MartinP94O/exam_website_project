@@ -28,11 +28,12 @@
                     <a href="{% url 'product delete' pk=product.pk %}" class="delete-button">Delete</a>
 
                 </div>
-            {% else %}
+            {% elif request.user.is_authenticated %}
                 <div class="buttons">
                     <a href="{% url 'product buy' pk=product.pk %}" class="edit-button">Buy</a>
                 </div>
             {% endif %}
+
         </div>
     </section>
 
