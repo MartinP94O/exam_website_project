@@ -22,8 +22,9 @@
 }
 
 .info-section {
+    /*border: 1px solid;*/
     position: relative;
-    width: 100%;
+    width: 96%;
     height: 100%;
     background-blend-mode: multiply;
     z-index: 2;
