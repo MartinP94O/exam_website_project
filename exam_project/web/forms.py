@@ -1,7 +1,7 @@
 from django import forms
 
-from exam_project.accounts.models import BuyingAddress
-from exam_project.web.models import Product
+
+from exam_project.web.models import Product, BuyingAddress
 
 
 class ProductCreateForm(forms.ModelForm):
