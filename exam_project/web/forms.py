@@ -4,38 +4,6 @@ from exam_project.accounts.models import BuyingAddress
 from exam_project.web.models import Product
 
 
-# class ProfileCreateForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Profile
-#         fields = ('username', 'email', 'age', 'password',)
-#
-#
-# class ProfileEditForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Profile
-#         fields = '__all__'
-#
-#
-# class ProfileDetailsForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Profile
-#         fields = ()
-#
-#
-# class ProfileDeleteForm(forms.ModelForm):
-#
-#     def save(self, commit=True):
-#         self.instance.delete()
-#         return self.instance
-#
-#     class Meta:
-#         model = Profile
-#         fields = ()
-#
-#
 class ProductCreateForm(forms.ModelForm):
 
     class Meta:

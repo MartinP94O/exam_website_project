@@ -143,33 +143,3 @@ def product_buy(request, pk):
     return render(request, 'product/product-buy.html', context)
 
 
-# def profile_edit(request, pk):
-#     profile = get_profile()
-#     if request.method == 'POST':
-#         form = ProfileEditForm(request.POST, instance=profile)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('profile details')
-#     else:
-#         form = ProfileEditForm(instance=profile)
-#     context = {
-#         'form': form,
-#         'profile': profile,
-#     }
-#     return render(request, 'profile/profile-edit.html', context)
-
-
-# def delete_profile(request, pk):
-#     profile = get_profile()
-#     if request.method == 'POST':
-#         form = ProfileDeleteForm(request.POST, instance=profile)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('show index')
-#     else:
-#         form = ProfileDeleteForm(instance=profile)
-#     context = {
-#         'form': form,
-#         'profile': profile,
-#     }
-#     return render(request, 'profile/profile-delete.html', context)

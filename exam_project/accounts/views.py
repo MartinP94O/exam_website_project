@@ -32,9 +32,6 @@ class UserDetailsView(views.DetailView):
         context['is_owner'] = self.request.user == self.object
         context['username'] = self.object.username
         context['email'] = self.object.email
-        # context['age'] = self.object.age
-        #TODO add age and total price for products
-
         return context
 
 
