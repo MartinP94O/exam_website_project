@@ -9,11 +9,17 @@
 
                 <h1>Create Profile</h1>
 
-                {{ form.username }}
-                {{ form.email }}
-                {{ form.password1 }}
-                {{ form.password2 }}
                 {% csrf_token %}
+
+                {% for field in form %}
+                    <p>{{ field.label_tag }}</p>
+                    <p>{{ field }}</p>
+                    {% for error in field.errors %}
+                        <div class="ui error message">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
 
                 <input class="btn submit" type="submit" value="Create Profile">
             </div>
