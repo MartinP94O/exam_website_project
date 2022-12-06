@@ -14,7 +14,4 @@ class AppUserAdmin(UserAdmin):
     form = UserEditForm
     add_form = UserCreateForm
     list_filter = ('first_name', 'last_name', 'is_staff', 'is_superuser', 'is_active',)
-    list_display_links = ('first_name', 'last_name')
-
-
-
+    list_display_links = ('username',)
