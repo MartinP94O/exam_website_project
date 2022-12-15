@@ -15,7 +15,7 @@
                     <p class="description">Name: {{ object.first_name }} {{ object.last_name }}</p>
                 {% endif %}
                 <div class="buttons">
-                    {% if is_owner %}
+                    {% if is_owner or user.is_superuser %}
                         <a href="{% url 'profile edit' pk=object.pk %}" class="edit-button">Edit</a>
                         <a href="{% url 'delete profile' pk=object.pk %}" class="delete-button">Delete</a>
                     {% endif %}
