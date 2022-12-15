@@ -1,11 +1,9 @@
 from django import forms
 
-
 from exam_project.web.models import Product, BuyingAddress
 
 
 class ProductCreateForm(forms.ModelForm):
-
     class Meta:
         model = Product
         fields = '__all__'
@@ -19,7 +17,6 @@ class ProductCreateForm(forms.ModelForm):
 
 
 class ProductEditForm(forms.ModelForm):
-
     class Meta:
         model = Product
         fields = '__all__'
@@ -33,7 +30,6 @@ class ProductEditForm(forms.ModelForm):
 
 
 class ProductDetailsForm(forms.ModelForm):
-
     class Meta:
         model = Product
         fields = ()
@@ -54,15 +50,12 @@ class ProductDeleteForm(forms.ModelForm):
         return self.instance
 
     class Meta:
-
         model = Product
         fields = '__all__'
         disabled = True
 
 
 class ProductBuyForm(forms.ModelForm):
-
     class Meta:
         model = BuyingAddress
         fields = '__all__'
-

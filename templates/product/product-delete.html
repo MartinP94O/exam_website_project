@@ -5,12 +5,14 @@
         <form id="delete" method="POST" action="{% url 'product delete' pk=product.pk %}">
             <div class="container">
 
-                <h1>Delete Product</h1>
+                <h1>Delete {{ product.product_type }}?</h1>
 
                 {{ form }}
                 {% csrf_token %}
 
-                <input class="btn submit" type="submit" value="Delete Product">
+                <input class="btn submit" type="submit" value="Yes">
+
+                <a class="delete-btn" href="javascript:history.back()">No take me back</a>
 
             </div>
         </form>
