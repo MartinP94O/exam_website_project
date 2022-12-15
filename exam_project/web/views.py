@@ -26,11 +26,9 @@ def show_index(request):
 def catalogue(request):
     profile = UserModel
     products = Product.objects.all()
-    products_count = len(products)
 
     context = {
         'products': products,
-        'products_count': products_count,
         'profile': profile,
     }
     return render(request, 'catalogue/catalogue.html', context)
