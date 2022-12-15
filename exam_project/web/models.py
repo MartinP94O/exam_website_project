@@ -4,7 +4,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
 
-from exam_project.core.validators import validate_only_letters
+from exam_project.core.validators import validate_only_letters, validate_year_length
 
 
 class Product(models.Model):
@@ -38,6 +38,10 @@ class Product(models.Model):
     product_year = models.IntegerField(
         null=False,
         blank=False,
+        validators=(
+            validate_year_length,
+        ),
+
     )
 
     product_image = models.URLField(

@@ -52,6 +52,13 @@ class ProductDeleteForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+        labels = {
+            'product_type': 'Type',
+            'product_model': 'Model',
+            'product_year': 'Year of production',
+            'product_image': 'Image URL',
+            'product_price': 'Price',
+        }
         disabled = True
 
 
