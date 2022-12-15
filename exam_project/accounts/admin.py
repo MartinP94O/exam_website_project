@@ -16,4 +16,3 @@ class AppUserAdmin(UserAdmin):
     list_filter = ('username', 'is_active', 'first_name', 'last_name', 'is_staff', 'is_superuser',)
     list_display = ('username', 'is_active', 'first_name', 'last_name', 'is_staff', 'is_superuser',)
     list_display_links = ('username',)
-
