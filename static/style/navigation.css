@@ -12,7 +12,7 @@ body{
 
 header,
 footer {
-    background-color: #2db9a3;
+    background-color: #02d0cf;
     width: 100%;
     overflow: hidden;
     color: white;
@@ -36,13 +36,13 @@ header h1 {
     display: inline-block;
     color: #E2E8EA;
     margin-bottom: auto;
-    border-right: 1px solid #2db9a3;
+    border-right: 1px solid #02d0cf;
 
 }
 
 
 h1 span{
-    color: #2db9a3;
+    color: #02d0cf;
 }
 
 header nav {
@@ -77,8 +77,8 @@ nav a {
 }
 
 nav a:hover{
-    border-bottom: 1px solid #2db9a3;
-    border-top: 1px solid #2db9a3;
+    border-bottom: 1px solid #02d0cf;
+    border-top: 1px solid #02d0cf;
 }
 
 

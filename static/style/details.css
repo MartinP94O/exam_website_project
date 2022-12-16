@@ -13,7 +13,7 @@
 #car-details>h1 {
     letter-spacing: 10px;
     font-family: 'Cinzel', serif;
-    color: #2db9a3;
+    color: #02d0cf;
     font-size: 55px;
     font-weight: 600;
     margin-bottom: 40px;
@@ -43,7 +43,7 @@
 }
 
 .car-header>h1 {
-    color: #2db9a3;
+    color: #02d0cf;
     margin-top: 5px;
     font-size: 36px;
     font-weight: 400;
@@ -73,7 +73,7 @@
 
 .description {
     font-size: 25px;
-    color: #2db9a3;
+    color: #02d0cf;
 }
 
 .car-img {
@@ -108,7 +108,7 @@
     border-radius: 20px;
 }
 .edit-button{
-    background: #2db9a3
+    background: #02d0cf
 }
 
 .delete-button{

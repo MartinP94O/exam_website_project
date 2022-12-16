@@ -104,13 +104,13 @@ a {
 }
 
 .index-message h2>span {
-    color: #2db9a3;
+    color: #02d0cf;
     text-transform: uppercase;
 }
 
 #catalogue>h1{
     text-align: center;
-    color: #2db9a3;
+    color: #02d0cf;
     text-transform: uppercase;
     padding: 20px;
     font-family: 'Cinzel', serif;
@@ -167,12 +167,12 @@ a {
 }
 
 .details-btn{
-    background: #2db9a3;
+    background: #02d0cf;
     box-shadow: 0 0 25px white;
 }
 
 .details-btn:hover{
-    box-shadow: 0 0 100px #2db9a3;
+    box-shadow: 0 0 100px #02d0cf;
 }
 .car-card>h3 {
     font-family: "Agency FB", serif;
@@ -202,7 +202,7 @@ a {
 .car-card>h3,
 .car-card>h1,
 .car-card>h2{
-    color: #2db9a3;
+    color: #02d0cf;
     text-align: center;
 }
 
@@ -221,7 +221,7 @@ a {
 }
 
 .no-articles {
-    color: #2db9a3;
+    color: #02d0cf;
     text-align: center;
     font-weight: 700;
     font-size: 60px;
