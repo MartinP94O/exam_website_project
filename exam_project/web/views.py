@@ -6,12 +6,6 @@ from exam_project.web.models import Product
 
 UserModel = get_user_model()
 
-# def get_profile():
-#     profiles = Profile.objects.all()
-#     if profiles:
-#         return profiles[0]
-#     return None
-
 
 def show_index(request):
     profile = UserModel
