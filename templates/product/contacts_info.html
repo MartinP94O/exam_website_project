@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <section id="car-details">
+        <h1>contacts</h1>
+        <div class="info-section">
+            <div class="car-header">
+
+                <img class="car-img"
+                     src="{% static 'images/nice-view.png' %}"
+                     alt='cart'/>
+
+                <h1>{{ shop.shop_name }}</h1>
+
+                <p><span class="description">Address: {{ shop.shop_address }}</span></p>
+
+                <p><span class="description">For contacts: +{{ shop.phone_number }}</span></p>
+
+                <p><span class="description">Email: {{ shop.shop_email }}</span></p>
+            </div>
+            {% if user.is_superuser %}
+            <div class="buttons">
+                <a href="{% url 'edit contact us' %}" class="edit-button">Edit</a>
+
+            </div>
+            {% endif %}
+
+        </div>
+    </section>
+
+{% endblock %}
