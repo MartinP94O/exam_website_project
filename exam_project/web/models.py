@@ -114,3 +114,32 @@ class BuyingAddress(models.Model):
         blank=False,
     )
 
+
+class ShopInfo(models.Model):
+
+    shop_name = models.CharField(
+        null=True,
+        blank=False,
+        max_length=20
+    )
+
+    phone_number = models.PositiveBigIntegerField(
+        null=True,
+        blank=False,
+        default=0000000000
+    )
+
+    shop_address = models.CharField(
+        null=True,
+        blank=False,
+        max_length=50
+    )
+
+    shop_email = models.EmailField(
+        null=True,
+        blank=False,
+    )
+
+
+
+

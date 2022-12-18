@@ -1,6 +1,6 @@
 from django import forms
 
-from exam_project.web.models import Product, BuyingAddress
+from exam_project.web.models import Product, BuyingAddress, ShopInfo
 
 
 class ProductCreateForm(forms.ModelForm):
@@ -66,3 +66,15 @@ class ProductBuyForm(forms.ModelForm):
     class Meta:
         model = BuyingAddress
         fields = '__all__'
+
+
+class ContactInfoEdit(forms.ModelForm):
+
+    class Meta:
+        model = ShopInfo
+        fields = '__all__'
+        labels = {
+            'shop_name': 'Store name',
+            'shop_address': 'Address',
+            'shop_email': 'Email'
+        }

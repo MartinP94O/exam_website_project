@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style/style.css' %}"/>
-    <title>Web Shop</title>
+    <title>Aqua Paradise</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
 
         <h1><a class="index-navigation" href="{% url 'show index' %}"><span>Aqua</span> Paradise</a></h1>
         <nav>
-
+            <a href="{% url 'contact us' %}">Contacts</a>
             {% if request.user.is_authenticated %}
                 <a href="{% url 'catalogue' %}">Catalogue</a>
                 {% if request.user.is_superuser %}
@@ -30,6 +30,7 @@
                 <a href="{% url 'create profile' %}">Create Profile</a>
                 <a href="{% url 'login profile' %}">Log in</a>
             {% endif %}
+
 
         </nav>
     </header>

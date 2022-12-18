@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect
 
-from exam_project.web.forms import ProductCreateForm, ProductEditForm, ProductDeleteForm, ProductBuyForm
-from exam_project.web.models import Product
+from exam_project.web.forms import ProductCreateForm, ProductEditForm, ProductDeleteForm, ProductBuyForm, \
+    ContactInfoEdit
+from exam_project.web.models import Product, ShopInfo
 
 UserModel = get_user_model()
 
@@ -26,6 +27,35 @@ def catalogue(request):
         'profile': profile,
     }
     return render(request, 'catalogue/catalogue.html', context)
+
+
+def contact_us(request):
+    profile = UserModel
+    shop = ShopInfo.objects.all()[0]
+
+    context = {
+        'profile': profile,
+        'shop': shop,
+    }
+    return render(request, 'product/contacts_info.html', context)
+
+
+def edit_contact_us(request):
+    profile = UserModel
+    shop = ShopInfo.objects.all()[0]
+    if request.method == 'POST':
+        form = ContactInfoEdit(request.POST, instance=shop)
+        if form.is_valid():
+            form.save()
+            return redirect('contact us')
+    else:
+        form = ContactInfoEdit(instance=shop)
+    context = {
+        'form': form,
+        'profile': profile,
+        'shop': shop,
+    }
+    return render(request, 'product/contacts-edit.html', context)
 
 
 def create_product(request):
