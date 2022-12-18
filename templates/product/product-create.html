@@ -6,11 +6,12 @@
         <form id="create" method="post" action="{% url 'create product' %}">
             <div class="container">
                 <h1 class="form-create-headline">Create Product</h1>
-
+                {% if user.is_superuser %}
                 {{ form }}
                 {% csrf_token %}
 
                 <input class="btn" type="submit" value="Create Product">
+                {% endif %}
             </div>
         </form>
     </section>

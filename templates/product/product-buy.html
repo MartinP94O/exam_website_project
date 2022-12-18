@@ -6,11 +6,13 @@
             <div class="container">
 
                 <h1>Delivery address</h1>
+                {% if user.is_authenticated %}
 
                 {{ form }}
                 {% csrf_token %}
 
                 <input class="btn submit" type="submit" value="Buy">
+                {% endif %}
 
             </div>
         </form>

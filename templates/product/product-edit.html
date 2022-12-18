@@ -6,9 +6,11 @@
             <div class="container">
 
                 <h1>Edit Product</h1>
+                {% if user.is_staff %}
                 {{ form }}
                 {% csrf_token %}
                 <input class="btn submit" type="submit" value="Edit Product">
+                {% endif %}
             </div>
         </form>
     </section>

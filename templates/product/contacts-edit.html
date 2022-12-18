@@ -6,9 +6,11 @@
             <div class="container">
 
                 <h1>Edit Contacts</h1>
+                {% if user.is_superuser %}
                 {{ form }}
                 {% csrf_token %}
                 <input class="btn submit" type="submit" value="Edit info">
+                {% endif %}
             </div>
         </form>
     </section>

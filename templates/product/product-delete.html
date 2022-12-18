@@ -6,6 +6,7 @@
             <div class="container">
 
                 <h1>Delete {{ product.product_type }}?</h1>
+                {% if user.is_staff %}
 
                 {{ form }}
                 {% csrf_token %}
@@ -13,6 +14,7 @@
                 <input class="btn submit" type="submit" value="Yes">
 
                 <a class="delete-btn" href="javascript:history.back()">No take me back</a>
+                {% endif %}
 
             </div>
         </form>

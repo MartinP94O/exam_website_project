@@ -6,6 +6,7 @@
         <form id="register" method="post" action="{% url 'profile edit' pk=object.pk %}">
             <div class="container">
                 <h1>Edit Profile</h1>
+                {% if user.is_authenticated %}
 
                 {{ form.username }}
                 {{ form.first_name }}
@@ -14,6 +15,7 @@
                 {% csrf_token %}
 
                 <input class="btn" type="submit" value="Edit Profile">
+                {% endif %}
             </div>
         </form>
     </section>
