@@ -116,11 +116,19 @@ class BuyingAddress(models.Model):
 
 
 class ShopInfo(models.Model):
+    SHOP_NAME_MAX_LEN = 20
+    SHOP_NAME_MIN_LEN = 2
+
+    SHOP_ADDRESS_MAX_LEN = 50
+    SHOP_ADDRESS_MIN_LEN = 5
 
     shop_name = models.CharField(
         null=True,
         blank=False,
-        max_length=20
+        max_length=SHOP_NAME_MAX_LEN,
+        validators=(
+            MinLengthValidator(SHOP_NAME_MIN_LEN, 'The name must be a minimum of 2 chars'),
+        ),
     )
 
     phone_number = models.PositiveBigIntegerField(
@@ -132,14 +140,13 @@ class ShopInfo(models.Model):
     shop_address = models.CharField(
         null=True,
         blank=False,
-        max_length=50
+        max_length=SHOP_ADDRESS_MAX_LEN,
+        validators=(
+            MinLengthValidator(SHOP_NAME_MIN_LEN, 'The address must be a minimum of 5 chars'),
+        ),
     )
 
     shop_email = models.EmailField(
         null=True,
         blank=False,
     )
-
-
-
-
