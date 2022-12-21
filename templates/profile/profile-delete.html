@@ -7,7 +7,7 @@
             <h1>Are you sure you want to delete your profile?</h1>
 
             <form id='delete' method="POST" action="{% url 'delete profile' pk=request.user.pk %}">
-                {% if user.is_superuser %}
+                {% if user.is_authenticated and object.pk == request.user.id or user.is_superuser %}
                 {{ form }}
                 {% csrf_token %}
 

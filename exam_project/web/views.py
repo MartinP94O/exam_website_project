@@ -37,7 +37,7 @@ def contact_us(request):
         'profile': profile,
         'shop': shop,
     }
-    return render(request, 'product/contacts_info.html', context)
+    return render(request, 'contacts/contacts_info.html', context)
 
 
 def edit_contact_us(request):
@@ -55,7 +55,7 @@ def edit_contact_us(request):
         'profile': profile,
         'shop': shop,
     }
-    return render(request, 'product/contacts-edit.html', context)
+    return render(request, 'contacts/contacts-edit.html', context)
 
 
 def create_product(request):
